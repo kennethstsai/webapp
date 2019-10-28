@@ -372,6 +372,7 @@
             /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
             /* harmony import */ var _blank_blank_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blank/blank.component */ "./src/app/blank/blank.component.ts");
             /* harmony import */ var _submit_submit_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./submit/submit.component */ "./src/app/submit/submit.component.ts");
+            /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
             var routes = [
                 {
                     path: '',
@@ -417,7 +418,7 @@
                             scrollPositionRestoration: 'top'
                         })
                     ],
-                    providers: [],
+                    providers: [{ provide: _angular_common__WEBPACK_IMPORTED_MODULE_11__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_11__["HashLocationStrategy"] }],
                     bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
                 })
             ], AppModule);
