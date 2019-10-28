@@ -431,6 +431,8 @@ let FormBodyComponent = class FormBodyComponent {
     constructor(router) {
         this.router = router;
         //let inputs = location.search.substring(1);
+    }
+    ngOnInit() {
         let inputs = this.router.url.split('?')[1];
         if (inputs == undefined || inputs.length == 0) {
             this.formFields = [
@@ -449,21 +451,28 @@ let FormBodyComponent = class FormBodyComponent {
                     required: true
                 },
                 {
-                    id: "address",
+                    id: "currentAddress",
                     name: "Street Address",
                     value: "8269 Trinket Ave.",
                     disabled: false,
                     required: true
                 },
                 {
-                    id: "state",
+                    id: "currentCity",
+                    name: "City",
+                    value: "Los Angeles",
+                    disabled: false,
+                    required: true
+                },
+                {
+                    id: "currentState",
                     name: "State",
                     value: "California",
                     disabled: false,
                     required: true
                 },
                 {
-                    id: "zipCode",
+                    id: "currentZip",
                     name: "Zip Code",
                     value: "96513",
                     disabled: false,
@@ -490,8 +499,6 @@ let FormBodyComponent = class FormBodyComponent {
             this.formFields = [];
             this.constructForm(inputs);
         }
-    }
-    ngOnInit() {
     }
     constructForm(inputs) {
         let params = inputs.split('&');
