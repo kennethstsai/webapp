@@ -660,7 +660,7 @@ let OrderformBodyComponent = class OrderformBodyComponent {
     }
     ngOnInit() {
         //REPLACE HERE
-        this.otherApp = "https://kennethstsai.github.io/webapp/#/webapp/form";
+        this.otherApp = "com.myTestApp://";
         this.link = "https://kennethstsai.github.io/webapp/#/webapp/form";
         this.idControl = this.otherApp + "?link=" + this.link;
     }
