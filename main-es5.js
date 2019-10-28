@@ -544,13 +544,16 @@
                             case "lastName":
                                 name = "Last Name";
                                 break;
-                            case "address":
+                            case "currentAddress":
                                 name = "Street Address";
                                 break;
-                            case "state":
+                            case "currentCity":
+                                name = "City";
+                                break;
+                            case "currentState":
                                 name = "State";
                                 break;
-                            case "zipCode":
+                            case "currentZip":
                                 name = "Zip Code";
                                 break;
                             case "ssn":
@@ -667,7 +670,9 @@
                     window.open(this.idControl);
                 };
                 OrderformBodyComponent.prototype.test = function () {
-                    this.router.navigate(['/webapp/form']);
+                    //this.router.navigate(['/webapp/form']);
+                    var testUrl = this.link;
+                    window.open(testUrl, "_self");
                 };
                 return OrderformBodyComponent;
             }());
@@ -677,7 +682,7 @@
             OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-orderform-body',
-                    template: "\n    <div>\n      <div class=\"mt-4 mb-5\">\n        \n        <p class=\"ml-4 text-secondary back-link\"><strong>&lt;</strong>   Edit Design</p>\n        <div class=\"text-center\">\n          <img src=\"assets/img/model3.jpg\" class=\"stock-img\">\n          <!--img src=\"../../assets/img/model3.jpg\" class=\"stock-img\"-->\n          <h2 class=\"mt-4\">Your Model 3</h2>\n        </div>\n      </div>\n\n      <div class=\"ml-4\">\n        <h5 class=\"mb-3\">Summary</h5>\n        <p class=\"text-secondary\">Model 3 Long Range Dual<br>Motor All-Wheel Drive</p>\n        <p class=\"text-secondary\">Pearl White Paint</p>\n        <p class=\"text-secondary\">18\" Aero Wheels</p>\n        <p class=\"text-secondary\">All Black Premium Interior</p>\n        <p class=\"text-secondary\">Autopilot</p>\n      </div>\n      <div class=\"text-center mb-4\">\n        <img src=\"assets/img/items.PNG\" class=\"item-img\">\n      </div>\n      <div class=\"text-secondary ml-4 text-sm mb-5\">Your design can be modified after ordering. Your car can be returned for a full refund within 7 days or 1,000 miles, whichever comes first. <span class=\"text-primary link\">Learn more</span></div>\n\n      <div class=\"text-center mt-1\">\n        <button class=\"btn btn-primary btn-buy\" (click)=\"redirect()\">Buy with ID Control</button>\n      </div>\n      <div class=\"text-center mt-4\">\n        <button class=\"btn btn-dark btn-buy\" (click)=\"test()\">Buy with Credit Card</button>\n      </div>\n\n      <div class=\"text-center mt-4 border-top p-3\">\n        <p class=\"text-primary link\">View additional information</p>\n      </div>\n    </div>\n  "
+                    template: "\n    <div>\n      <div class=\"mt-4 mb-5\">\n        \n        <p class=\"ml-4 text-secondary back-link\"><strong>&lt;</strong>   Edit Design</p>\n        <div class=\"text-center\">\n          <img src=\"assets/img/model3.jpg\" class=\"stock-img\">\n          <!--img src=\"../../assets/img/model3.jpg\" class=\"stock-img\"-->\n          <h2 class=\"mt-4\">Your Model 3</h2>\n        </div>\n      </div>\n\n      <div class=\"ml-4\">\n        <h5 class=\"mb-3\">Summary</h5>\n        <p class=\"text-secondary\">Model 3 Long Range Dual<br>Motor All-Wheel Drive</p>\n        <p class=\"text-secondary\">Pearl White Paint</p>\n        <p class=\"text-secondary\">18\" Aero Wheels</p>\n        <p class=\"text-secondary\">All Black Premium Interior</p>\n        <p class=\"text-secondary\">Autopilot</p>\n      </div>\n      <div class=\"text-center mb-4\">\n        <img src=\"assets/img/items.PNG\" class=\"item-img\">\n      </div>\n      <div class=\"text-secondary ml-4 text-sm mb-5\">Your design can be modified after ordering. Your car can be returned for a full refund within 7 days or 1,000 miles, whichever comes first. <span class=\"text-primary link\">Learn more</span></div>\n\n      <div class=\"text-center mt-1\">\n        <button class=\"btn btn-primary btn-rounded btn-buy\" (click)=\"redirect()\">ID Control with Experian</button>\n      </div>\n      <div class=\"text-center mt-4\">\n        <button class=\"btn btn-dark btn-rounded btn-buy\" (click)=\"test()\">Buy with Credit Card</button>\n      </div>\n\n      <div class=\"text-center mt-4 border-top p-3\">\n        <p class=\"text-primary link\">View additional information</p>\n      </div>\n    </div>\n  "
                 })
             ], OrderformBodyComponent);
             /***/ 
