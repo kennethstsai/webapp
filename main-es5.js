@@ -465,9 +465,9 @@
             var FormBodyComponent = /** @class */ (function () {
                 function FormBodyComponent(router) {
                     this.router = router;
-                    var inputs = location.search.substring(1);
-                    console.log(location.search);
-                    if (inputs.length == 0) {
+                    //let inputs = location.search.substring(1);
+                    var inputs = this.router.url.split('?')[1];
+                    if (inputs == undefined || inputs.length == 0) {
                         this.formFields = [
                             {
                                 id: "firstName",

@@ -430,9 +430,9 @@ __webpack_require__.r(__webpack_exports__);
 let FormBodyComponent = class FormBodyComponent {
     constructor(router) {
         this.router = router;
-        let inputs = location.search.substring(1);
-        console.log(location.search);
-        if (inputs.length == 0) {
+        //let inputs = location.search.substring(1);
+        let inputs = this.router.url.split('?')[1];
+        if (inputs == undefined || inputs.length == 0) {
             this.formFields = [
                 {
                     id: "firstName",
