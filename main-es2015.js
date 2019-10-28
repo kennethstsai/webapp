@@ -601,7 +601,7 @@ let OrderformBodyComponent = class OrderformBodyComponent {
     redirect() {
     }
     navigate() {
-        this.router.navigate(['/form']);
+        this.router.navigate(['/webapp/form']);
     }
 };
 OrderformBodyComponent.ctorParameters = () => [
@@ -616,7 +616,7 @@ OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         
         <p class="ml-4 text-secondary back-link"><strong>&lt;</strong>   Edit Design</p>
         <div class="text-center">
-          <img src="../../assets/img/model3.jpg" class="stock-img">
+          <img src="assets/img/model3.jpg" class="stock-img">
           <h2 class="mt-4">Your Model 3</h2>
         </div>
       </div>
@@ -628,7 +628,7 @@ OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         <p>18" Aero Wheels</p>
         <p>All Black Premium Interior</p>
         <p>Autopilot</p>
-        <p><img src="../../assets/img/add_circle_outline-24px.svg" class="mr-1">Show Details</p>
+        <p><img src="assets/img/add_circle_outline-24px.svg" class="mr-1">Show Details</p>
       </div>
 
       <div class="text-center mt-1">

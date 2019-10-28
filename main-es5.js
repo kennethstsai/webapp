@@ -603,7 +603,7 @@
                 OrderformBodyComponent.prototype.redirect = function () {
                 };
                 OrderformBodyComponent.prototype.navigate = function () {
-                    this.router.navigate(['/form']);
+                    this.router.navigate(['/webapp/form']);
                 };
                 return OrderformBodyComponent;
             }());
@@ -613,7 +613,7 @@
             OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-orderform-body',
-                    template: "\n    <div>\n      <div class=\"mt-4 mb-5\">\n        \n        <p class=\"ml-4 text-secondary back-link\"><strong>&lt;</strong>   Edit Design</p>\n        <div class=\"text-center\">\n          <img src=\"../../assets/img/model3.jpg\" class=\"stock-img\">\n          <h2 class=\"mt-4\">Your Model 3</h2>\n        </div>\n      </div>\n\n      <div class=\"ml-4\">\n        <h5 class=\"mb-3\">Summary</h5>\n        <p>Model 3 Long Range Dual<br>Motor All-Wheel Drive</p>\n        <p>Pearl White Paint</p>\n        <p>18\" Aero Wheels</p>\n        <p>All Black Premium Interior</p>\n        <p>Autopilot</p>\n        <p><img src=\"../../assets/img/add_circle_outline-24px.svg\" class=\"mr-1\">Show Details</p>\n      </div>\n\n      <div class=\"text-center mt-1\">\n        <button class=\"btn btn-primary\" onclick=\"window.location.href = 'https://www.google.com?link=hello';\">Buy with ID Control</button>\n        <button class=\"btn btn-primary\" (click)=\"navigate()\">Test Navigate</button>\n      </div>\n    </div>\n  "
+                    template: "\n    <div>\n      <div class=\"mt-4 mb-5\">\n        \n        <p class=\"ml-4 text-secondary back-link\"><strong>&lt;</strong>   Edit Design</p>\n        <div class=\"text-center\">\n          <img src=\"assets/img/model3.jpg\" class=\"stock-img\">\n          <h2 class=\"mt-4\">Your Model 3</h2>\n        </div>\n      </div>\n\n      <div class=\"ml-4\">\n        <h5 class=\"mb-3\">Summary</h5>\n        <p>Model 3 Long Range Dual<br>Motor All-Wheel Drive</p>\n        <p>Pearl White Paint</p>\n        <p>18\" Aero Wheels</p>\n        <p>All Black Premium Interior</p>\n        <p>Autopilot</p>\n        <p><img src=\"assets/img/add_circle_outline-24px.svg\" class=\"mr-1\">Show Details</p>\n      </div>\n\n      <div class=\"text-center mt-1\">\n        <button class=\"btn btn-primary\" onclick=\"window.location.href = 'https://www.google.com?link=hello';\">Buy with ID Control</button>\n        <button class=\"btn btn-primary\" (click)=\"navigate()\">Test Navigate</button>\n      </div>\n    </div>\n  "
                 })
             ], OrderformBodyComponent);
             /***/ 
