@@ -687,18 +687,26 @@ OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
       <div class="ml-4">
         <h5 class="mb-3">Summary</h5>
-        <p>Model 3 Long Range Dual<br>Motor All-Wheel Drive</p>
-        <p>Pearl White Paint</p>
-        <p>18" Aero Wheels</p>
-        <p>All Black Premium Interior</p>
-        <p>Autopilot</p>
-        <p><img src="assets/img/add_circle_outline-24px.svg" class="mr-1">Show Details</p>
-        <!--p><img src="../../assets/img/add_circle_outline-24px.svg" class="mr-1">Show Details</p-->
+        <p class="text-secondary">Model 3 Long Range Dual<br>Motor All-Wheel Drive</p>
+        <p class="text-secondary">Pearl White Paint</p>
+        <p class="text-secondary">18" Aero Wheels</p>
+        <p class="text-secondary">All Black Premium Interior</p>
+        <p class="text-secondary">Autopilot</p>
       </div>
+      <div class="text-center mb-4">
+        <img src="assets/img/items.PNG" class="item-img">
+      </div>
+      <div class="text-secondary ml-4 text-sm mb-5">Your design can be modified after ordering. Your car can be returned for a full refund within 7 days or 1,000 miles, whichever comes first. <span class="text-primary link">Learn more</span></div>
 
       <div class="text-center mt-1">
-        <button class="btn btn-primary" onclick="window.location.href = 'https://www.google.com?link=hello';">Buy with ID Control</button>
-        <button class="btn btn-primary" (click)="navigate()">Test Navigate</button>
+        <button class="btn btn-primary btn-buy" onclick="window.location.href = 'https://www.google.com?link=hello';">Buy with ID Control</button>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-dark btn-buy" (click)="navigate()">Buy with Credit Card</button>
+      </div>
+
+      <div class="text-center mt-4 border-top p-3">
+        <p class="text-primary link">View additional information</p>
       </div>
     </div>
   `
