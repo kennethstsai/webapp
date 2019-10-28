@@ -470,37 +470,51 @@
                             {
                                 id: "firstName",
                                 name: "First Name",
-                                value: "Laura"
+                                value: "Laura",
+                                disabled: false,
+                                required: true
                             },
                             {
                                 id: "lastName",
                                 name: "Last Name",
-                                value: "Bailey"
+                                value: "Bailey",
+                                disabled: false,
+                                required: true
                             },
                             {
                                 id: "address",
                                 name: "Street Address",
-                                value: "8269 Trinket Ave."
+                                value: "8269 Trinket Ave.",
+                                disabled: false,
+                                required: true
                             },
                             {
                                 id: "state",
                                 name: "State",
-                                value: "California"
+                                value: "California",
+                                disabled: false,
+                                required: true
                             },
                             {
                                 id: "zipCode",
                                 name: "Zip Code",
-                                value: "96513"
+                                value: "96513",
+                                disabled: false,
+                                required: true
                             },
                             {
                                 id: "ssn",
                                 name: "Social Security Number",
-                                value: "123-45-6789"
+                                value: "123-45-6789",
+                                required: false,
+                                disabled: false
                             },
                             {
                                 id: "creditScore",
                                 name: "Credit Score",
-                                value: "800"
+                                value: "800",
+                                disabled: true,
+                                required: true
                             }
                         ];
                     }
@@ -514,32 +528,75 @@
                 };
                 FormBodyComponent.prototype.constructForm = function (inputs) {
                     var params = inputs.split('&');
+                    console.log(params);
                     for (var i = 0; i < params.length; i++) {
+                        var id = unescape(params[i].split('=')[0]);
+                        var val = unescape(params[i].split('=')[1]);
+                        var name = void 0;
+                        var required = true;
+                        var disabled = false;
+                        switch (id) {
+                            case "firstName":
+                                name = "First Name";
+                                break;
+                            case "lastName":
+                                name = "Last Name";
+                                break;
+                            case "address":
+                                name = "Street Address";
+                                break;
+                            case "state":
+                                name = "State";
+                                break;
+                            case "zipCode":
+                                name = "Zip Code";
+                                break;
+                            case "ssn":
+                                name = "Social Security Number";
+                                required = false;
+                                break;
+                            case "creditScore":
+                                name = "Credit Score";
+                                disabled = true;
+                                break;
+                            default:
+                                name = id;
+                                required = false;
+                        }
                         this.formFields.push({
-                            id: unescape(params[i].split('=')[0]),
-                            name: unescape(params[i].split('=')[0]),
-                            value: unescape(params[i].split('=')[1])
+                            id: id,
+                            name: name,
+                            value: val,
+                            required: required,
+                            disabled: disabled
                         });
                     }
                 };
                 FormBodyComponent.prototype.submitForm = function () {
+                    var valid = true;
                     for (var i = 0; i < this.formFields.length; i++) {
                         console.log(this.formFields[i].name + ": " + this.formFields[i].value);
+                        if (!this.validateField(this.formFields[i])) {
+                            valid = false;
+                        }
                     }
-                    this.router.navigate(['/webapp/submit']);
+                    if (valid) {
+                        this.router.navigate(['/webapp/submit']);
+                    }
                 };
                 FormBodyComponent.prototype.updateInput = function (input, event) {
-                    var newVal = event.target.value;
-                    var validate = this.validateField(newVal);
-                    if (validate) {
-                        input.value = event.target.value;
+                    var oldVal = input.value;
+                    input.value = event.target.value;
+                    if (!this.validateField(input)) {
+                        input.error = "This field is required.";
                     }
                     else {
-                        input.value = event.target.value;
+                        input.error = null;
                     }
                 };
-                FormBodyComponent.prototype.validateField = function (value) {
-                    return value.length > 0;
+                FormBodyComponent.prototype.validateField = function (input) {
+                    var req = !input.required || input.value.length > 0;
+                    return req;
                 };
                 return FormBodyComponent;
             }());
@@ -549,7 +606,7 @@
             FormBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-form-body',
-                    template: "\n    <form class=\"dynamic-form\" #loanForm=\"ngForm\" (ngSubmit)=\"submitForm();\">\n      <div *ngIf=\"formFields\" class=\"row mt-5 ml-2 mr-2\">\n        <ng-template ngFor let-input [ngForOf]=\"formFields\">\n          <div class=\"col-12\">\n            <label class=\"control-label text-bold font-weight-bold\" [for]=\"input.id\">{{input.name}}</label>\n            <input value=\"{{input.value}}\" class=\"form-control no-gutters mb-4\" type=\"text\" id=\"input.id\" required=\"true\" \n              minlength=\"3\" maxlength=\"25\" (change)=\"updateInput(input, $event)\" #field/>\n          </div>\n        </ng-template>\n      </div>\n\n      <div class=\"text-center\">\n        <button class=\"btn btn-primary pl-5 pr-5 mt-5 mb-5\" [disabled]=\"!loanForm.valid\" (click)=\"submitForm()\">Submit</button>\n      </div>\n    </form>\n  "
+                    template: "\n    <form class=\"dynamic-form\" #loanForm=\"ngForm\" (ngSubmit)=\"submitForm();\">\n      <div *ngIf=\"formFields\" class=\"row mt-5 ml-2 mr-2\">\n        <ng-template ngFor let-input [ngForOf]=\"formFields\">\n          <div class=\"col-12 mb-4\">\n            <label class=\"control-label text-bold font-weight-bold\" [for]=\"input.id\">{{input.name}}<span class=\"text-danger\" *ngIf=\"input.required\"> *</span></label>\n            <input [value]=\"input.value\" class=\"form-control no-gutters\" type=\"text\" id=\"input.id\" [required]=\"input.required\" [disabled]=\"input.disabled\" \n              minlength=\"3\" maxlength=\"25\" (change)=\"updateInput(input, $event)\" #field/>\n            <div class=\"text-danger\" *ngIf=\"input.error != null\">{{input.error}}</div>\n          </div>\n        </ng-template>\n      </div>\n\n      <div class=\"text-center\">\n        <button class=\"btn btn-primary pl-5 pr-5 mt-5 mb-5\" [disabled]=\"!loanForm.valid\" (click)=\"submitForm()\">Submit</button>\n      </div>\n    </form>\n  "
                 })
             ], FormBodyComponent);
             /***/ 
