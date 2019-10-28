@@ -576,7 +576,7 @@
             FormHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-form-header',
-                    template: "\n    <div class=\"border-bottom mb-1 mt-1\">\n      <div class=\"text-center\">\n        <img src=\"../../assets/img/tesla.jpg\" class=\"banner-logo\">\n      </div>\n      <img class=\"\" src=\"../../assets/img/am_eng.png\" class=\"btn-lang\">\n    </div>\n  "
+                    template: "\n    <div class=\"border-bottom mb-1 mt-1\">\n      <div class=\"text-center\">\n        <img src=\"assets/img/tesla.jpg\" class=\"banner-logo\">\n        <!--img src=\"../../assets/img/tesla.jpg\" class=\"banner-logo\"-->\n      </div>\n      <img class=\"\" src=\"assets/img/am_eng.png\" class=\"btn-lang\">\n      <!--img class=\"\" src=\"../../assets/img/am_eng.png\" class=\"btn-lang\"-->\n    </div>\n  "
                 })
             ], FormHeaderComponent);
             /***/ 
@@ -613,7 +613,7 @@
             OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-orderform-body',
-                    template: "\n    <div>\n      <div class=\"mt-4 mb-5\">\n        \n        <p class=\"ml-4 text-secondary back-link\"><strong>&lt;</strong>   Edit Design</p>\n        <div class=\"text-center\">\n          <img src=\"assets/img/model3.jpg\" class=\"stock-img\">\n          <h2 class=\"mt-4\">Your Model 3</h2>\n        </div>\n      </div>\n\n      <div class=\"ml-4\">\n        <h5 class=\"mb-3\">Summary</h5>\n        <p>Model 3 Long Range Dual<br>Motor All-Wheel Drive</p>\n        <p>Pearl White Paint</p>\n        <p>18\" Aero Wheels</p>\n        <p>All Black Premium Interior</p>\n        <p>Autopilot</p>\n        <p><img src=\"assets/img/add_circle_outline-24px.svg\" class=\"mr-1\">Show Details</p>\n      </div>\n\n      <div class=\"text-center mt-1\">\n        <button class=\"btn btn-primary\" onclick=\"window.location.href = 'https://www.google.com?link=hello';\">Buy with ID Control</button>\n        <button class=\"btn btn-primary\" (click)=\"navigate()\">Test Navigate</button>\n      </div>\n    </div>\n  "
+                    template: "\n    <div>\n      <div class=\"mt-4 mb-5\">\n        \n        <p class=\"ml-4 text-secondary back-link\"><strong>&lt;</strong>   Edit Design</p>\n        <div class=\"text-center\">\n          <img src=\"assets/img/model3.jpg\" class=\"stock-img\">\n          <!--img src=\"../../assets/img/model3.jpg\" class=\"stock-img\"-->\n          <h2 class=\"mt-4\">Your Model 3</h2>\n        </div>\n      </div>\n\n      <div class=\"ml-4\">\n        <h5 class=\"mb-3\">Summary</h5>\n        <p>Model 3 Long Range Dual<br>Motor All-Wheel Drive</p>\n        <p>Pearl White Paint</p>\n        <p>18\" Aero Wheels</p>\n        <p>All Black Premium Interior</p>\n        <p>Autopilot</p>\n        <p><img src=\"assets/img/add_circle_outline-24px.svg\" class=\"mr-1\">Show Details</p>\n        <!--p><img src=\"../../assets/img/add_circle_outline-24px.svg\" class=\"mr-1\">Show Details</p-->\n      </div>\n\n      <div class=\"text-center mt-1\">\n        <button class=\"btn btn-primary\" onclick=\"window.location.href = 'https://www.google.com?link=hello';\">Buy with ID Control</button>\n        <button class=\"btn btn-primary\" (click)=\"navigate()\">Test Navigate</button>\n      </div>\n    </div>\n  "
                 })
             ], OrderformBodyComponent);
             /***/ 
@@ -639,7 +639,7 @@
             SubmitComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-submit',
-                    template: "\n    <div class=\"text-center\">\n      <img src=\"../../assets/img/model3.jpg\" class=\"mt-5 stock-img\">\n      <h2 class=\"mt-5\">Congratulations on your new Tesla!</h2>\n    </div>\n  "
+                    template: "\n    <div class=\"text-center\">\n      <!--img src=\"../../assets/img/model3.jpg\" class=\"mt-5 stock-img\"-->\n      <img src=\"assets/img/model3.jpg\" class=\"mt-5 stock-img\">\n      <h2 class=\"mt-5\">Congratulations on your new Tesla!</h2>\n    </div>\n  "
                 })
             ], SubmitComponent);
             /***/ 

@@ -563,9 +563,11 @@ FormHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: `
     <div class="border-bottom mb-1 mt-1">
       <div class="text-center">
-        <img src="../../assets/img/tesla.jpg" class="banner-logo">
+        <img src="assets/img/tesla.jpg" class="banner-logo">
+        <!--img src="../../assets/img/tesla.jpg" class="banner-logo"-->
       </div>
-      <img class="" src="../../assets/img/am_eng.png" class="btn-lang">
+      <img class="" src="assets/img/am_eng.png" class="btn-lang">
+      <!--img class="" src="../../assets/img/am_eng.png" class="btn-lang"-->
     </div>
   `
     })
@@ -617,6 +619,7 @@ OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         <p class="ml-4 text-secondary back-link"><strong>&lt;</strong>   Edit Design</p>
         <div class="text-center">
           <img src="assets/img/model3.jpg" class="stock-img">
+          <!--img src="../../assets/img/model3.jpg" class="stock-img"-->
           <h2 class="mt-4">Your Model 3</h2>
         </div>
       </div>
@@ -629,6 +632,7 @@ OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         <p>All Black Premium Interior</p>
         <p>Autopilot</p>
         <p><img src="assets/img/add_circle_outline-24px.svg" class="mr-1">Show Details</p>
+        <!--p><img src="../../assets/img/add_circle_outline-24px.svg" class="mr-1">Show Details</p-->
       </div>
 
       <div class="text-center mt-1">
@@ -668,7 +672,8 @@ SubmitComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         selector: 'app-submit',
         template: `
     <div class="text-center">
-      <img src="../../assets/img/model3.jpg" class="mt-5 stock-img">
+      <!--img src="../../assets/img/model3.jpg" class="mt-5 stock-img"-->
+      <img src="assets/img/model3.jpg" class="mt-5 stock-img">
       <h2 class="mt-5">Congratulations on your new Tesla!</h2>
     </div>
   `
