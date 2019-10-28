@@ -431,6 +431,7 @@ let FormBodyComponent = class FormBodyComponent {
     constructor(router) {
         this.router = router;
         let inputs = location.search.substring(1);
+        console.log(location.search);
         if (inputs.length == 0) {
             this.formFields = [
                 {
