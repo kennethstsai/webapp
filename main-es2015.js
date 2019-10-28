@@ -699,7 +699,7 @@ OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
       <div class="text-secondary ml-4 text-sm mb-5">Your design can be modified after ordering. Your car can be returned for a full refund within 7 days or 1,000 miles, whichever comes first. <span class="text-primary link">Learn more</span></div>
 
       <div class="text-center mt-1">
-        <button class="btn btn-primary btn-buy" onclick="window.location.href = 'https://www.google.com?link=hello';">Buy with ID Control</button>
+        <button class="btn btn-primary btn-buy" onclick="window.location.href = 'https://kennethstsai.github.io/webapp/#/webapp/form?link=https://kennethstsai.github.io/webapp/#/webapp/form';">Buy with ID Control</button>
       </div>
       <div class="text-center mt-4">
         <button class="btn btn-dark btn-buy" (click)="navigate()">Buy with Credit Card</button>
