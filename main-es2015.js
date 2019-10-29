@@ -513,7 +513,7 @@ let FormBodyComponent = class FormBodyComponent {
             }
         }
         if (valid) {
-            this.router.navigate(['/webapp/submit']);
+            this.router.navigate(['/webapp/#/submit']);
         }
     }
     updateInput(input, event) {

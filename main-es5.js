@@ -554,7 +554,7 @@
                         }
                     }
                     if (valid) {
-                        this.router.navigate(['/webapp/submit']);
+                        this.router.navigate(['/webapp/#/submit']);
                     }
                 };
                 FormBodyComponent.prototype.updateInput = function (input, event) {
