@@ -513,7 +513,8 @@ let FormBodyComponent = class FormBodyComponent {
             }
         }
         if (valid) {
-            this.router.navigate(['/#/submit']);
+            let link = "https://kennethstsai.github.io/webapp/#/submit";
+            window.open(link, "_self");
         }
     }
     updateInput(input, event) {

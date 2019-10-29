@@ -554,7 +554,8 @@
                         }
                     }
                     if (valid) {
-                        this.router.navigate(['/#/submit']);
+                        var link = "https://kennethstsai.github.io/webapp/#/submit";
+                        window.open(link, "_self");
                     }
                 };
                 FormBodyComponent.prototype.updateInput = function (input, event) {
