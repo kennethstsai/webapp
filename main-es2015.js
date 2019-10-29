@@ -271,7 +271,7 @@ __webpack_require__.r(__webpack_exports__);
 let AppComponent = class AppComponent {
     constructor(router) {
         this.router = router;
-        this.title = 'webapp';
+        this.title = 'ID Control';
     }
     ngOnInit() {
     }
@@ -314,10 +314,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form_body_form_body_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./form-body/form-body.component */ "./src/app/form-body/form-body.component.ts");
 /* harmony import */ var _orderform_body_orderform_body_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./orderform-body/orderform-body.component */ "./src/app/orderform-body/orderform-body.component.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _blank_blank_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blank/blank.component */ "./src/app/blank/blank.component.ts");
-/* harmony import */ var _submit_submit_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./submit/submit.component */ "./src/app/submit/submit.component.ts");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
-
+/* harmony import */ var _submit_submit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./submit/submit.component */ "./src/app/submit/submit.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 
 
 
@@ -335,20 +333,12 @@ const routes = [
         component: _orderform_body_orderform_body_component__WEBPACK_IMPORTED_MODULE_7__["OrderformBodyComponent"]
     },
     {
-        path: 'webapp',
-        component: _orderform_body_orderform_body_component__WEBPACK_IMPORTED_MODULE_7__["OrderformBodyComponent"]
-    },
-    {
-        path: 'webapp/form',
+        path: 'form',
         component: _form_body_form_body_component__WEBPACK_IMPORTED_MODULE_6__["FormBodyComponent"]
     },
     {
-        path: 'webapp/order',
-        component: _orderform_body_orderform_body_component__WEBPACK_IMPORTED_MODULE_7__["OrderformBodyComponent"]
-    },
-    {
-        path: 'webapp/submit',
-        component: _submit_submit_component__WEBPACK_IMPORTED_MODULE_10__["SubmitComponent"]
+        path: 'submit',
+        component: _submit_submit_component__WEBPACK_IMPORTED_MODULE_9__["SubmitComponent"]
     }
 ];
 let AppModule = class AppModule {
@@ -360,8 +350,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _form_header_form_header_component__WEBPACK_IMPORTED_MODULE_5__["FormHeaderComponent"],
             _form_body_form_body_component__WEBPACK_IMPORTED_MODULE_6__["FormBodyComponent"],
             _orderform_body_orderform_body_component__WEBPACK_IMPORTED_MODULE_7__["OrderformBodyComponent"],
-            _blank_blank_component__WEBPACK_IMPORTED_MODULE_9__["BlankComponent"],
-            _submit_submit_component__WEBPACK_IMPORTED_MODULE_10__["SubmitComponent"]
+            _submit_submit_component__WEBPACK_IMPORTED_MODULE_9__["SubmitComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -371,41 +360,10 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 scrollPositionRestoration: 'top'
             })
         ],
-        providers: [{ provide: _angular_common__WEBPACK_IMPORTED_MODULE_11__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_11__["HashLocationStrategy"] }],
+        providers: [{ provide: _angular_common__WEBPACK_IMPORTED_MODULE_10__["LocationStrategy"], useClass: _angular_common__WEBPACK_IMPORTED_MODULE_10__["HashLocationStrategy"] }],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
     })
 ], AppModule);
-
-
-
-/***/ }),
-
-/***/ "./src/app/blank/blank.component.ts":
-/*!******************************************!*\
-  !*** ./src/app/blank/blank.component.ts ***!
-  \******************************************/
-/*! exports provided: BlankComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlankComponent", function() { return BlankComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-
-
-let BlankComponent = class BlankComponent {
-    constructor() { }
-    ngOnInit() {
-    }
-};
-BlankComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-blank',
-        template: `
-  `
-    })
-], BlankComponent);
 
 
 
@@ -430,11 +388,11 @@ __webpack_require__.r(__webpack_exports__);
 let FormBodyComponent = class FormBodyComponent {
     constructor(router) {
         this.router = router;
-        //let inputs = location.search.substring(1);
     }
     ngOnInit() {
         let inputs = this.router.url.split('?')[1];
         if (inputs == undefined || inputs.length == 0) {
+            //test case
             this.formFields = [
                 {
                     id: "firstName",
@@ -495,14 +453,12 @@ let FormBodyComponent = class FormBodyComponent {
             ];
         }
         else {
-            console.log(inputs);
             this.formFields = [];
             this.constructForm(inputs);
         }
     }
     constructForm(inputs) {
         let params = inputs.split('&');
-        console.log(params);
         for (let i = 0; i < params.length; i++) {
             let id = unescape(params[i].split('=')[0]);
             let val = unescape(params[i].split('=')[1]);
@@ -552,7 +508,6 @@ let FormBodyComponent = class FormBodyComponent {
     submitForm() {
         let valid = true;
         for (let i = 0; i < this.formFields.length; i++) {
-            console.log(this.formFields[i].name + ": " + this.formFields[i].value);
             if (!this.validateField(this.formFields[i])) {
                 valid = false;
             }
@@ -622,10 +577,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let FormHeaderComponent = class FormHeaderComponent {
-    constructor() {
-        this.companyName = "Tesla";
-    }
+    constructor() { }
     ngOnInit() {
+        this.companyName = "Tesla";
     }
 };
 FormHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -635,10 +589,8 @@ FormHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     <div class="border-bottom mb-1 mt-1">
       <div class="text-center">
         <img src="assets/img/tesla.jpg" class="banner-logo">
-        <!--img src="../../assets/img/tesla.jpg" class="banner-logo"-->
       </div>
       <img class="" src="assets/img/am_eng.png" class="btn-lang">
-      <!--img class="" src="../../assets/img/am_eng.png" class="btn-lang"-->
     </div>
   `
     })
@@ -669,17 +621,14 @@ let OrderformBodyComponent = class OrderformBodyComponent {
         this.router = router;
     }
     ngOnInit() {
-        //REPLACE HERE
         this.otherApp = "com.myTestApp://";
-        this.link = "https://kennethstsai.github.io/webapp/#/webapp/form";
+        this.link = "https://kennethstsai.github.io/webapp/#/form";
         this.idControl = this.otherApp + "?link=" + this.link;
     }
-    redirect() {
-        //window.open(this.idControl, "_self");
+    redirectToIDControl() {
         window.open(this.idControl);
     }
-    test() {
-        //this.router.navigate(['/webapp/form']);
+    formTestCase() {
         let testUrl = this.link;
         window.open(testUrl, "_self");
     }
@@ -693,11 +642,9 @@ OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: `
     <div>
       <div class="mt-4 mb-5">
-        
-        <p class="ml-4 text-secondary back-link"><strong>&lt;</strong>   Edit Design</p>
+        <p class="ml-4 text-secondary link"><strong>&lt;</strong>   Edit Design</p>
         <div class="text-center">
           <img src="assets/img/model3.jpg" class="stock-img">
-          <!--img src="../../assets/img/model3.jpg" class="stock-img"-->
           <h2 class="mt-4">Your Model 3</h2>
         </div>
       </div>
@@ -716,10 +663,10 @@ OrderformBodyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
       <div class="text-secondary ml-4 text-sm mb-5">Your design can be modified after ordering. Your car can be returned for a full refund within 7 days or 1,000 miles, whichever comes first. <span class="text-primary link">Learn more</span></div>
 
       <div class="text-center mt-1">
-        <button class="btn btn-primary btn-rounded btn-buy" (click)="redirect()">ID Control with Experian</button>
+        <button class="btn btn-primary btn-rounded btn-buy" (click)="redirectToIDControl()">ID Control with Experian</button>
       </div>
       <div class="text-center mt-4">
-        <button class="btn btn-dark btn-rounded btn-buy" (click)="test()">Buy with Credit Card</button>
+        <button class="btn btn-dark btn-rounded btn-buy" (click)="formTestCase()">Buy with Credit Card</button>
       </div>
 
       <div class="text-center mt-4 border-top p-3">
@@ -758,7 +705,6 @@ SubmitComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         selector: 'app-submit',
         template: `
     <div class="text-center">
-      <!--img src="../../assets/img/model3.jpg" class="mt-5 stock-img"-->
       <img src="assets/img/model3.jpg" class="mt-5 stock-img">
       <h2 class="mt-5">Congratulations on your new Tesla!</h2>
     </div>
