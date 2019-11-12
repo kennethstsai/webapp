@@ -623,7 +623,7 @@ let OrderformBodyComponent = class OrderformBodyComponent {
     }
     ngOnInit() {
         this.otherApp = "com.myTestApp://";
-        this.link = "https://zillow.com";
+        this.link = "https://kennethstsai.github.io/webapp/#/form";
         this.idControl = this.otherApp + "?link=" + this.link;
     }
     redirectToIDControl() {
